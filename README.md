@@ -6,7 +6,7 @@ Este projeto foi desenvolvido como parte das atividades do bootcamp Javascript G
 
 HTML formatado como ```display: grid;```. Controle dos tempos via ```setTimeout()```.
 
-Adicionalmente foi implementado som através do ```simpleTone.js``` e o aumento de dificuldade ao longo do jogo através da variável ```duration```.
+Adicionalmente foi implementado som através do ```simpleTone.js``` e o aumento de dificuldade ao longo do jogo através da variável ```duration```. Também foi exibido o ```score``` que pisca quando atualizado.
 
 ## Uso
 

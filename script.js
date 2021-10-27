@@ -2,6 +2,7 @@ let order = [];
 let clickedOrder = [];
 let score = 0;
 let duration = 1000;
+let isGameOver = false;
 
 const sounds = ['A3','B3','C3','D3'];
 
@@ -14,6 +15,7 @@ const blue = document.querySelector('.blue');
 const red = document.querySelector('.red');
 const yellow = document.querySelector('.yellow');
 const green = document.querySelector('.green');
+const scoreElement = document.querySelector('#score');
 
 //Cria ordem aleatória de cores
 let shuffleOrder = () => {
@@ -50,9 +52,10 @@ let checkOrder = () => {
             break;
         }
     }
-    if(clickedOrder.length == order.length) {
+    if(clickedOrder.length == order.length && !isGameOver) {
         //alert(`Pontuação:  ${score}\nVocê acertou! Iniciando próximo nível!`);
-        setTimeout(() => nextLevel(), duration);
+        //setTimeout(() => nextLevel(), duration);
+        nextLevel();
     }
 }
 
@@ -84,23 +87,30 @@ let createColorElement = (color) => {
 //Proximo nivel
 let nextLevel = () => {
     score++;
+    scoreElement.innerHTML = `Score: ${score}`;
+    scoreElement.classList.add('blink');
+    setTimeout(()=>scoreElement.classList.remove('blink'), 1000);
     duration = duration * .9;
-    shuffleOrder();
+    setTimeout(() => shuffleOrder(), duration);
 }
 
 //Game over
 let gameOver = () => {
     alert(`Pontuaçao: ${score}!\nVocê perdeu o jogo!`);
+    isGameOver = true;
 }
 
 //Inicio do jogo
 let playGame = () => {
     //alert('Bem vindo ao Genius! Iniciando um novo jogo!');
+    isGameOver = false;
     order = [];
     clickedOrder = [];
     score = 0;
+    scoreElement.innerHTML = `Score: ${score}`;
     duration = 1000;
-    nextLevel();
+    //nextLevel();
+    shuffleOrder();
 }
 
 //Eventos de clique

@@ -1,3 +1,14 @@
+@font-face {
+	font-family:Titulo;
+	src:url(./ANODETONOONE.TTF);
+}
+
+* {
+	font-family:Titulo;
+	font-size:40px;
+	color:black;
+}
+
 body {
     margin:0;
     background-color: rgb(208,255,239);
@@ -54,8 +65,29 @@ body {
 
 .start {
     position: absolute;
-    height: 4vh;
-    top: 48vh;
-    left: 46vw;
-    width: 8vw;
+    height: 8vh;
+    top: 46vh;
+    left: 38vw;
+    width: 24vw;
+}
+
+.score {
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.blink {
+    animation: blink-animation .2s steps(5, start) infinite;
+    -webkit-animation: blink-animation .2s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
 }
