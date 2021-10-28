@@ -1,6 +1,6 @@
 @font-face {
 	font-family:Titulo;
-	src:url(./ANODETONOONE.TTF);
+	src:url(./ARCADECLASSIC.TTF);
 }
 
 * {
@@ -15,8 +15,8 @@ body {
 }
 
 .main-game {
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,8 +67,9 @@ body {
     position: absolute;
     height: 8vh;
     top: 46vh;
-    left: 38vw;
-    width: 24vw;
+    left: 44vw;
+    width: 12vw;
+    min-width:120px;
 }
 
 .score {
