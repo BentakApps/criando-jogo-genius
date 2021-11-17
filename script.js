@@ -2,7 +2,7 @@ let order = [];
 let clickedOrder = [];
 let score = 0;
 let duration = 1000;
-let isGameOver = false;
+let isGameOver = true;
 
 const sounds = ['A3','B3','C3','D3'];
 
@@ -96,21 +96,24 @@ let nextLevel = () => {
 
 //Game over
 let gameOver = () => {
-    alert(`Pontuaçao: ${score}!\nVocê perdeu o jogo!`);
+    scoreElement.innerHTML = `GAME OVER\nScore: ${score}\nSTART`;
     isGameOver = true;
+    "START";
 }
 
 //Inicio do jogo
 let playGame = () => {
-    //alert('Bem vindo ao Genius! Iniciando um novo jogo!');
-    isGameOver = false;
-    order = [];
-    clickedOrder = [];
-    score = 0;
-    scoreElement.innerHTML = `Score: ${score}`;
-    duration = 1000;
-    //nextLevel();
-    shuffleOrder();
+    if(isGameOver){
+        //alert('Bem vindo ao Genius! Iniciando um novo jogo!');
+        isGameOver = false;
+        order = [];
+        clickedOrder = [];
+        score = 0;
+        scoreElement.innerHTML = `Score: ${score}`;
+        duration = 1000;
+        //nextLevel();
+        shuffleOrder();
+    }
 }
 
 //Eventos de clique
