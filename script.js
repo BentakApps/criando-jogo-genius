@@ -64,10 +64,9 @@ let click = (color) => {
     playTone(sounds[color],'sine',duration/1000);
     clickedOrder[clickedOrder.length] = color;
     createColorElement(color).classList.add('selected');
-
+    checkOrder();
     setTimeout(() => {
         createColorElement(color).classList.remove('selected');
-        checkOrder();
     }, 250);
 }
 
